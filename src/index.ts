@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { Command } from "commander";
 import fs from "fs";
 import path from "path";
@@ -36,6 +37,14 @@ program
         .map((file) => parseInt(file.replace("part-", "")))
         .sort((a, b) => b - a)[0];
 
+    console.info(
+      chalk.bold(
+        "* ",
+        chalk.greenBright(`Day ${day}`),
+        chalk.redBright(`Part ${part}`),
+        " *",
+      ),
+    );
     await import(`./challenges/day-${day}/part-${part}/index.ts`);
   })
   .parse();
