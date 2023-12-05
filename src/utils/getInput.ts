@@ -18,15 +18,15 @@ export const getInput = async <
   return transform?.(content) ?? content;
 };
 
-export const linesTransformer = (input: string) =>
+export const getLines = (input: string) =>
   input
     .split("\n")
     .map((l) => l.trim())
     .filter(Boolean);
 
-export const getSampleLinesTransformer =
+export const getLinesSample =
   (sample: number) => (input: string) => {
-    const lines = linesTransformer(input).slice(0, sample);
+    const lines = getLines(input).slice(0, sample);
     boxPrint(lines, "Sample");
     return lines;
   };

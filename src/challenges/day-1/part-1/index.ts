@@ -1,7 +1,7 @@
-import { getInput, linesTransformer } from "../../../utils/getInput.js";
+import { getInput, getLines } from "../../../utils/getInput.js";
 import { boxPrint } from "../../../utils/boxPrint.js";
 
-const input = await getInput(import.meta, linesTransformer);
+const input = await getInput(import.meta, getLines);
 
 const sum = input
   .map((line) => line.replaceAll(/[a-z]/g, ""))
