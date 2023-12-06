@@ -24,9 +24,8 @@ export const getLines = (input: string) =>
     .map((l) => l.trim())
     .filter(Boolean);
 
-export const getLinesSample =
-  (sample: number) => (input: string) => {
-    const lines = getLines(input).slice(0, sample);
-    boxPrint(lines, "Sample");
-    return lines;
-  };
+export const getLinesSample = (sample: number, offset = 0) => (input: string) => {
+  const lines = getLines(input).slice(offset, offset + sample);
+  boxPrint(lines, "Sample");
+  return lines;
+};
